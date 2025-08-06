@@ -21,16 +21,16 @@
     "jpeg",
     "web"
   ],
-  "author": "Your Name",
+  "author": "Adam Moore",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/photopti.git"
+    "url": "git+https://github.com/adamaoc/photopti.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/photopti/issues"
+    "url": "https://github.com/adamaoc/photopti/issues"
   },
-  "homepage": "https://github.com/yourusername/photopti#readme",
+  "homepage": "https://github.com/adamaoc/photopti#readme",
   "engines": {
     "node": ">=16.0.0"
   },
