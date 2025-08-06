@@ -1,0 +1,50 @@
+{
+  "name": "photopti",
+  "version": "1.0.0",
+  "description": "A fast and simple command-line tool to resize and optimize images for the web.",
+  "main": "dist/index.js",
+  "bin": {
+    "photopti": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "image",
+    "optimization",
+    "resize",
+    "cli",
+    "jpeg",
+    "web"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/photopti.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/photopti/issues"
+  },
+  "homepage": "https://github.com/yourusername/photopti#readme",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "chalk": "^5.5.0",
+    "glob": "^11.0.3",
+    "sharp": "^0.34.3",
+    "yargs": "^18.0.0"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/node": "^24.2.0",
+    "@types/yargs": "^17.0.33",
+    "tsx": "^4.20.3",
+    "typescript": "^5.9.2"
+  }
+}
