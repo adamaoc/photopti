@@ -1,6 +1,7 @@
 # PhotOpti
 
-![Logo-Work](https://github.com/user-attachments/assets/fbcfdc6f-4813-4359-8d2d-d0d18b46e343)
+![Logo-Work-2](https://github.com/user-attachments/assets/5184517a-572f-4580-905b-01f9b751f529)
+
 
 A fast and simple command-line tool to resize and optimize images for the web.
 
