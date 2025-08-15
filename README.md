@@ -1,7 +1,6 @@
-# PhotOpti
+# <img width="35" height="35" alt="Photopti Logo" src="https://github.com/user-attachments/assets/f9dac2fe-27a3-4c3d-9c2b-45e1f40294aa" /> PhotOpti
 
 ![Logo-Work-2](https://github.com/user-attachments/assets/5184517a-572f-4580-905b-01f9b751f529)
-
 
 A fast and simple command-line tool to resize and optimize images for the web.
 
