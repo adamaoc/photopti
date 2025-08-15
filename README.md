@@ -20,9 +20,21 @@ A fast and simple command-line tool to resize and optimize images for the web.
 
 ## Installation
 
+This project is not yet published on npm. You can install and run it directly from GitHub.
+
+### Option A: Run via `npx` from GitHub
+Requires Node.js >= 16.
 ```bash
-npm install -g photopti
+npx github:adamaoc/photopti --help
 ```
+
+### Option B: Global install from GitHub
+This will clone, build (via prepare), and link the CLI.
+```bash
+npm install -g github:adamaoc/photopti
+```
+
+After install, ensure your npm global bin is on PATH (see Using with Zsh below) so you can run `photopti`.
 
 ## Using with Zsh
 
