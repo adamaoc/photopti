@@ -24,6 +24,28 @@ A fast and simple command-line tool to resize and optimize images for the web.
 npm install -g photopti
 ```
 
+## Using with Zsh
+
+If `photopti` is not found after a global install, make sure your npm global bin directory is on your `PATH` in Zsh.
+
+1) Verify it's available:
+```bash
+command -v photopti
+```
+
+2) If not found, add npm's global bin to your PATH in `~/.zshrc`:
+```bash
+echo 'export PATH="$(npm config get prefix)/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+3) Optional: create a short alias:
+```bash
+echo 'alias po="photopti"' >> ~/.zshrc && source ~/.zshrc
+```
+
+Note: Shell completions for Zsh are not provided yet.
+
 ## Usage
 
 Navigate to your folder of images in the terminal and run the tool.
@@ -46,6 +68,8 @@ Options:
   -q, --quality <num>       JPEG quality (1-100) [default: 80]
   -o, --output <dir>        Output directory name [default: "Opti"]
   -r, --rename <name>       Rename files with sequential numbering
+  -f, --file <path>         Process a single image file (duplicate and reformat)
+      --name <string>       Output base name for single-file mode (no extension)
   -v, --verbose            Show detailed processing information
       --dry-run            Preview files that would be processed
   -h, --help               Show help
@@ -100,6 +124,28 @@ photopti --dry-run --verbose    # Preview with detailed info
 ```bash
 photopti --width 1200 --quality 90 --output "optimized" --verbose
 photopti --rename "summer" --percentage 75 --quality 85 --verbose
+```
+
+### Single-file mode (duplicate and reformat)
+
+Use `--file` to process just one image. Defaults:
+- **Width**: 1600px (keeps aspect ratio)
+- **Rename**: original name with `--copy` suffix
+- **Destination**: if an `Opti/` folder exists in the current directory, the new image goes there; otherwise, it is saved in the current directory
+
+Examples:
+```bash
+# Basic: duplicate one file to 1600px wide, same folder or Opti if it exists
+photopti --file ./IMG_1234.JPG
+
+# Specify a different output directory (created if missing)
+photopti --file ./IMG_1234.JPG --output ./resized
+
+# Specify a custom name (without extension)
+photopti --file ./IMG_1234.JPG --name hero-banner
+
+# Use percentage instead of width
+photopti --file ./IMG_1234.JPG --percentage 50
 ```
 
 ## Supported Image Formats

@@ -6,6 +6,12 @@ export interface ProcessingOptions {
   verbose: boolean;
   dryRun: boolean;
   rename?: string;
+  /** Path to a single image file to process (enables single-file mode) */
+  singleFile?: string;
+  /** Output base name for single-file mode (without extension) */
+  singleName?: string;
+  /** Whether user explicitly provided an output directory flag */
+  outputExplicit?: boolean;
 }
 
 export interface ProcessingResult {

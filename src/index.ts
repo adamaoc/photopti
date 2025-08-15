@@ -32,6 +32,15 @@ const argv = yargs(hideBin(process.argv))
     description: 'Output directory name',
     default: 'Opti'
   })
+  .option('file', {
+    alias: 'f',
+    type: 'string',
+    description: 'Process a single image file (duplicate and reformat)'
+  })
+  .option('name', {
+    type: 'string',
+    description: 'Output base name for single-file mode (no extension)'
+  })
   .option('verbose', {
     alias: 'v',
     type: 'boolean',
@@ -59,6 +68,9 @@ const argv = yargs(hideBin(process.argv))
     if (argv.width && argv.width <= 0) {
       throw new Error('Width must be greater than 0');
     }
+    if (argv.file && typeof argv.file !== 'string') {
+      throw new Error('Invalid --file value');
+    }
     return true;
   })
   .help()
@@ -72,13 +84,16 @@ async function main() {
     console.log(chalk.gray('Resize and optimize images for the web\n'));
 
     const options: ProcessingOptions = {
-      width: argv.percentage ? undefined : argv.width,
+      width: argv.file ? (argv.percentage ? undefined : (argv.width ?? 1600)) : (argv.percentage ? undefined : argv.width),
       percentage: argv.percentage,
       quality: argv.quality,
       output: argv.output,
       verbose: argv.verbose,
       dryRun: argv['dry-run'],
-      rename: argv.rename
+      rename: argv.rename,
+      singleFile: argv.file,
+      singleName: argv.name,
+      outputExplicit: typeof argv.o !== 'undefined' || typeof argv.output !== 'undefined'
     };
 
     if (options.verbose) {
