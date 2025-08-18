@@ -1,4 +1,4 @@
-# <img width="35" height="35" alt="Photopti Logo" src="https://github.com/user-attachments/assets/f9dac2fe-27a3-4c3d-9c2b-45e1f40294aa" /> PhotOpti
+# <img width="30" height="30" alt="logo-lg-200" src="https://github.com/user-attachments/assets/66941ea5-415f-4182-915c-c6967e7ef9fc" /> PhotOpti
 
 ![Logo-Work-2](https://github.com/user-attachments/assets/5184517a-572f-4580-905b-01f9b751f529)
 
